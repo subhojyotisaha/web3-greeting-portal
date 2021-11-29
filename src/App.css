@@ -1,0 +1,208 @@
+body {
+  font-family: Sora, sans-serif;
+  background-image: url("https://wallpapercave.com/wp/wp2757890.gif");
+  background-size: 100%;
+  padding-top: 30px;
+  overflow-y: hidden;
+}
+
+.mainContainer {
+  position: absolute;
+  justify-content: center;
+  left: 72%;
+  width: 500px;
+  top: 50%;
+  background-color: #c2fff9;
+  transform: translate(-72%, -50%);
+  padding: 40px 20px;
+  border-radius: 25px;
+}
+
+.dataContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  max-height: 625px;
+  overflow-y: hidden;
+}
+
+.header {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.bio {
+  text-align: center;
+  color: gray;
+  font-size: 12px;
+  margin-top: 16px;
+  font-weight: 600;
+}
+
+.greetBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  font-weight: 600;
+}
+
+textarea {
+  resize: none;
+}
+
+.greetButton,
+.greetButton::after {
+  cursor: pointer;
+  margin-top: 20px;
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  font-family: Sora;
+  background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
+  border: 0;
+  color: #fff;
+  line-height: 25px;
+  box-shadow: 6px 0px 0px #00e6f6;
+  outline: transparent;
+  position: relative;
+}
+
+.greetButton::after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+
+  content: "GREET";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 3%,
+    #00e6f6 3%,
+    #00e6f6 5%,
+    #ff013c 5%
+  );
+  text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+  clip-path: var(--slice-0);
+}
+
+.greetButton:hover::after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+.modalBox {
+  width: 300px;
+  position: relative;
+  left: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: 400px;
+  background: white;
+  border: 1px solid #ccc;
+  transition: 1.1s ease-out;
+  transform: scale(1.5);
+  opacity: 1;
+  visibility: visible;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.allGreetDisplay {
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(164, 15, 223);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(89, 6, 114);
+}
+
+.accountBox {
+  width: 300px;
+  position: absolute;
+  right: 700px;
+  bottom: 600px;
+  font-size: 12px;
+  background-image: linear-gradient(to bottom right, #d47ae8, #a8ece7);
+  border: 1px solid #ccc;
+  transition: 1.1s ease-out;
+  transform: scale(1.5);
+  opacity: 1;
+  visibility: visible;
+  padding: 10px;
+  border-radius: 25px;
+}
